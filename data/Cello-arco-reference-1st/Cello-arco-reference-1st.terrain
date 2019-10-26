@@ -1,0 +1,9 @@
+; Cello terrain parameter table declarations
+
+; harmonic data functions are 500-579
+; harmonic peak magnitude data 580-583
+
+f584    0       128      -23     "data/Cello-arco-reference-1st/x1aOFparams"
+;f585    0       128      -23     "data/Cello-arco-reference-1st/y1aOFparams"
+;f586    0       128      -23     "data/Cello-arco-reference-1st/x2aOFparams"
+;f587    0       128      -23     "data/Cello-arco-reference-1st/y2aOFparams"
