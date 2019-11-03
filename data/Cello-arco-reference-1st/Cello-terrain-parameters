@@ -205,3 +205,5 @@ The complete Cello-arco-reference-1st terrain layer 1 x parameters are
 0	0	0	0
 
 This parameter file is in the Cello-arco-reference-1st directory, 'x1aOFparams'.
+
+Note that the harmonic shaping is independent of the (possibly) superimposed amplitude envelope. Functions and rate of indexing need attention...

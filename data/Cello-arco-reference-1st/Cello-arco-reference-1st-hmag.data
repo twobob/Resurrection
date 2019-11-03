@@ -1,0 +1,96 @@
+; source file ../data/Cello-arco-reference-1st/arco-ppC2.het
+; via ../data/Cello-arco-reference-1st/arco-ppC2.asc
+;
+; number of harmonics (amp/frq track pairs):
+; 10
+;
+f580	0	16	-2
+77
+7261
+3915
+6115
+3177
+4217
+3192
+2935
+3036
+2211
+0
+0
+0
+0
+0
+0
+
+; source file ../data/Cello-arco-reference-1st/arco-ppG5.het
+; via ../data/Cello-arco-reference-1st/arco-ppG5.asc
+;
+; number of harmonics (amp/frq track pairs):
+; 10
+;
+f581	0	16	-2
+10100
+9259
+7903
+3586
+1703
+1511
+780
+684
+378
+441
+0
+0
+0
+0
+0
+0
+
+; source file ../data/Cello-arco-reference-1st/arco-ffC2.het
+; via ../data/Cello-arco-reference-1st/arco-ffC2.asc
+;
+; number of harmonics (amp/frq track pairs):
+; 10
+;
+f582	0	16	-2
+60
+6600
+5435
+7419
+3444
+4756
+2831
+3491
+2513
+1941
+0
+0
+0
+0
+0
+0
+
+; source file ../data/Cello-arco-reference-1st/arco-ffG5.het
+; via ../data/Cello-arco-reference-1st/arco-ffG5.asc
+;
+; number of harmonics (amp/frq track pairs):
+; 10
+;
+f583	0	16	-2
+14772
+10021
+5990
+3201
+1252
+890
+809
+582
+348
+232
+0
+0
+0
+0
+0
+0
+

@@ -1,8 +1,8 @@
 #include "data/Cello-arco-reference-1st/Cello-arco-reference-1st-header.sco"
 
 i90		0		3	2400 6.00
-i90		+		.	3300 6.02
 i90		+		.	3900 6.04
+i90		+		.	3300 6.02
 i90		+		.	4900 6.05
 i90		+		.	6200 6.07
 i90		+		.	7200 6.09

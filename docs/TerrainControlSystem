@@ -19,7 +19,7 @@ Group	Control target			Parameter ID 'p'
 5		index scan period		ixsp
 
 6		index dynamic link
-		group 0				ix b 
+		group 0				ix
 		groups 1-5			Parameter ID groups 1-5 above
 		
 	ixsp positive is interpreted as a scan period of ixsp/notephasedur
@@ -47,10 +47,16 @@ group <n> <p>
 		i)	<p> table offset					<p>toff
 		ii)	<p> table wrap					<p>twrap
 		iii)	<p> index table scan period			<p>ixsp
+		iv)	<p> index table scan period flag		<p>TDCOP
 		
 	n = group number, p = parameter (sections 1-5 'Parameter ID' above).
 
 	The index generated in b) references a(iii)
+	
+	The scan period flag, if set to 1, gives the product of the scan frequency
+	(if the scan period is specified as <0) and note frequency; otherwise the
+	negative value signifies a fixed frequency in Hz. A positive scan period
+	value is a scalar of the reciprocal of the note duration.
 
 
 Subsidiary groups (6)
@@ -61,6 +67,7 @@ group <n> <p>
 		i)	index link type					<p>TDCflag
 		ii)	index amplitude/frequency scalar	<p>AFTDC
 		iii)	index harmonic number scalar		<p>HTDC
+		iv)	index operation type			iTDCop<p>
 
 	n = group number, p = parameter (see 'Parameter ID' above).
 	
@@ -70,13 +77,15 @@ group <n> <p>
 	The group <n> parameters (groups 1 to 5) link to the index generated
 	in that group by the parameters specified in b), i-iv and c), iii.
 
-	Three parameters to each group (0-6)
+	Four parameters to each group (0-6)
 	
-	Link value		link					amp/frq scalar	harmonic scalar
-	0			none				<irrelevant>	<irrelevant>
-	1			amp					<n>			<n>
-	2			frq					<n>			<n>
-	3			iafix					<n>			<n>
+	Link value		link					amp/frq scalar	harmonic scalar	opType
+	0			none				<irrelevant>	<irrelevant>		<0/1>
+	1			amp					<n>			<n>				<0/1>
+	2			frq					<n>			<n>				<0/1>
+	3			iafix					<n>			<n>				<0/1>
+	4			1-amp				<n>			<n>				<0/1>
+	5			1-frq					<n>			<n>				<0/1>
 
 	n = nonzero group index parameter scalar; a zero value turns the link off.
 	iafix = composite amp/frq index generated in i90.
@@ -102,6 +111,13 @@ uses the HTDC as an amp/frq vector scalar. This is inconsistent and unsatisfacto
 Note also that the default settings of TDC flag, HTDC and AFTDC zero results in a
 scaling of 1 in the appropriate subsection.
 
+	The TDCOP opType flag controls the interaction between AFTDC and HTDC: if zero,
+	these are additive, else multiplicative:
+	
+	0:	harmonic*HTDC+AFTDC
+	1:	harmonic*HTDC*AFTDC
+
+	
 Surface / function (0)
 	This defines an axis component of the terrain. The terrain parameter files
 	are in pairs, one each for the x and y axis functions which, when multiplied,

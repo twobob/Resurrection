@@ -173,7 +173,7 @@ int main ( int argc, char *argv[] )
 
 	tblBase += harmonics*2;	// next free ftable number
 	hetcnv->outMode ( (char *) "w" );	// reset to write new file
-
+printf("next free %d\n", tblBase);
 	strcpy(dataFile, dstDir);
 	strncat(dataFile, instrName, strlen(instrName));
 	strncat(dataFile, "-hmag.data", 10);
@@ -226,25 +226,27 @@ int main ( int argc, char *argv[] )
 	strcpy(dstDir, "data/");	// this instrument header file is expected by resurrection in its data dir.
 	strcat(dstDir, (char *) &instrName);
 	strcat(dstDir, "/");	// 
-
 	out->writeF((char *) "; ");
 	out->writeF((char *) instrName);
 	out->writeF((char *) "-header.sco\n\n");
 	out->writeF((char *) "; This file should be included in the instrument score files as the first line:\n");
 	out->writeF((char *) "; #include \"");
-	out->writeF((char *) dstDir);
+	out->writeF(dstDir);
 	out->writeF((char *) instrName);
 	out->writeF((char *) "-header.sco\"\n\n");
-	out->writeF((char *) "#include \"../../header.sco\"\n");
+	out->writeF((char *) "#include \"header.sco\"\n");
 	out->writeF((char *) "#include \"");
+	out->writeF(dstDir);
 	out->writeF((char *) instrName);
 	out->writeF((char *) ".data\"\n#include \"");
+	out->writeF(dstDir);
 	out->writeF((char *) instrName);
 	out->writeF((char *) "-hmag.data\"\n\n");
 	out->writeF((char *) "; Additional header files may be specified, e.g.\n");
 	out->writeF((char *) "; #include \"");
+	out->writeF(dstDir);
 	out->writeF((char *) instrName);
-	out->writeF((char *) "-terrain\"\n\n");
+	out->writeF((char *) ".terrain\"\n\n");
 	out->writeF((char *) "i1	0	0	");
 	snprintf(ascFile, sizeof(instrNum), "%u", instrNum);	// use asc as buffer...
 	out->writeF((char *) ascFile);

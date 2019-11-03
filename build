@@ -1,12 +1,12 @@
 #!/bin/bash
 
 cd utils
-tar xzvf hetconvert-1.6.tar.gz
+tar xzvf hetconvert-1.6.1.tar.gz
 cd hetconvert
 make
 mv hetcnv ..
 cd ..
-#build makeFtables
+build makeFtables
 make
 #
 # make the Cello-arco-reference-1st instrument, MIDI number 43
@@ -16,7 +16,7 @@ harmonics="10"
 basetbl="500"
 ./makeFtables $instr $inum $harmonics $basetbl \
 arco-ppC2 arco-ppG5 arco-ffC2 arco-ffG5
-#
+
 cd ../data
 for x in Cello-arco-reference-1st
 do

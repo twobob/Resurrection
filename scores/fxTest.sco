@@ -114,10 +114,10 @@ i90	+		1		.		7.00	; next note after this is not tied
 ;i3 +		.		0		0		7.04	; tied notes
 ;i3 +		.		0		0		7.05	; portamento off after this
 
-;i9	start	dur		ampl	freq	amps	ampe	trmafn
+;i9	start	dur		ampl	freq	amps	ampe	trmafn	trmdly
 ; apply increasing/decreasing tremolo
-;i9	2.5		1.5		5000	0	0	1	0
-;i9	4		1		5000	0	1	0	0
+;i9	2.5		1.5		5000	0	0		1		0		0
+;i9	4		1		5000	0	1		0		0		0
 
 ;i3 8.5		0.5		0		0		8.07
 ;i3 +		.		0		0		8.07
@@ -131,8 +131,9 @@ i90	+		1		.		7.00	; next note after this is not tied
 ;i3 9		3		2		203		0	; swell on 2nd note of tied grp
 ; reduces as note amplitudes decrease...
 
-;i8		8	1		1000	4		1		1		0
-;i8		10.5	0.5		0	0		1		1		0
+;i9	start	dur		ampl	freq	amps	ampe	vibffn	vibdly
+;i8	8		1		1000	4	1		1		0		0
+;i8	10.5		0.5		0		0	1		1		0		0
 
 ; consecutive notes
 ;i90	0	0.5		5000	7.00
