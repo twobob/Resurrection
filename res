@@ -1,1 +1,1 @@
-csound -d -W -o sound/"$@".wav resurrection-17.2.2.orc scores/"$@".sco
+csound -d -W -o sound/"$@".wav resurrection-17.2.3.orc scores/"$@".sco
